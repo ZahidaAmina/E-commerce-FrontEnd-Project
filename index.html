@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="NEXAMART — modern essentials, simple shopping. Browse featured products, popular picks and daily deals." />
+  <title>NEXAMART — Modern Essentials</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+  <link rel="stylesheet" href="css/tailwind.css" />
+</head>
+<body id="home">
+  <!-- Navbar & footer are injected by js/app.js -->
+
+  <!-- HERO -->
+  <section class="hero relative overflow-hidden text-white">
+    <div class="wrapper grid min-h-[460px] grid-cols-[1.1fr_0.9fr] items-center gap-8 py-14 max-lg:grid-cols-1 max-lg:text-center">
+      <div class="max-lg:flex max-lg:flex-col max-lg:items-center">
+        <span class="inline-block mb-4 rounded-full bg-accent/15 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-[2px] text-[#ffd7b0]">New Season · 2026</span>
+        <h1 class="mb-4 text-[clamp(2.6rem,6vw,4rem)] font-extrabold leading-[1.02] tracking-[-0.5px]">Summer<br />Collection</h1>
+        <p class="mb-6 max-w-[440px] text-lg text-[#c6c6cd] max-lg:mx-auto">Fresh styles and everyday essentials — curated for warm days and long nights.</p>
+        <div class="mb-8 flex flex-wrap gap-3 max-lg:justify-center">
+          <a href="shop.html" class="btn btn-accent btn-lg">Shop Now <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="#categories" class="btn btn-ghost btn-lg">Explore Categories</a>
+        </div>
+        <div class="flex gap-9 max-lg:justify-center">
+          <div class="flex flex-col"><strong class="text-2xl font-bold text-white">300+</strong><span class="text-sm text-[#a8a8b0]">Products</span></div>
+          <div class="flex flex-col"><strong class="text-2xl font-bold text-white">4.8★</strong><span class="text-sm text-[#a8a8b0]">Avg. rating</span></div>
+          <div class="flex flex-col"><strong class="text-2xl font-bold text-white">24h</strong><span class="text-sm text-[#a8a8b0]">Fast shipping</span></div>
+        </div>
+      </div>
+      <div class="relative h-[360px] max-lg:order-first max-lg:h-[300px] max-sm:h-[240px]" aria-hidden="true">
+        <div class="hero-orb absolute inset-0 m-auto h-80 w-80 rounded-full max-sm:h-[230px] max-sm:w-[230px]"></div>
+        <span class="absolute inset-0 grid place-items-center">
+          <img src="images/products/Hero.png" alt="Featured Product" class="h-80 w-80 rounded-full object-cover max-sm:h-[230px] max-sm:w-[230px]" />
+        </span>
+        <span class="hero-float hero-float-1 absolute left-[2%] top-[8%] grid h-[72px] w-[72px] place-items-center rounded-[20px] bg-white text-3xl shadow-lg">👟</span>
+        <span class="hero-float hero-float-2 absolute right-0 top-[30%] grid h-[72px] w-[72px] place-items-center rounded-[20px] bg-white text-3xl shadow-lg">🎧</span>
+        <span class="hero-float hero-float-3 absolute bottom-[6%] left-[18%] grid h-[72px] w-[72px] place-items-center rounded-[20px] bg-white text-3xl shadow-lg">👜</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED PRODUCTS -->
+  <section class="section">
+    <div class="wrapper">
+      <div class="section-head">
+        <div>
+          <span class="section-eyebrow">Handpicked for you</span>
+          <h2 class="section-title">Featured Products</h2>
+        </div>
+        <a class="link-btn" href="shop.html">View all <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="product-grid" id="featuredProducts"></div>
+    </div>
+  </section>
+
+  <!-- SHOP BY CATEGORY -->
+  <section class="section section-alt" id="categories">
+    <div class="wrapper">
+      <div class="section-head">
+        <div>
+          <span class="section-eyebrow">Find your style</span>
+          <h2 class="section-title">Shop by Category</h2>
+        </div>
+      </div>
+      <div class="category-grid" id="categoryGrid"></div>
+    </div>
+  </section>
+
+  <!-- POPULAR PRODUCTS -->
+  <section class="section">
+    <div class="wrapper">
+      <div class="section-head">
+        <div>
+          <span class="section-eyebrow">What everyone loves</span>
+          <h2 class="section-title">Popular Products</h2>
+        </div>
+        <a class="link-btn" href="shop.html">View all <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="product-grid" id="popularProducts"></div>
+    </div>
+  </section>
+
+  <!-- SALE / DISCOUNT -->
+  <section class="section sale-section">
+    <div class="wrapper">
+      <div class="section-head section-head-light">
+        <div>
+          <span class="section-eyebrow">Limited time only</span>
+          <h2 class="section-title">Sale &amp; Deals</h2>
+        </div>
+        <a class="link-btn link-btn-light" href="shop.html?sort=discount">View all <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="product-grid" id="saleProducts"></div>
+    </div>
+  </section>
+
+  <!-- VALUE PROPS -->
+  <section class="section section-alt">
+    <div class="wrapper">
+      <div class="grid grid-cols-4 gap-6 max-lg:grid-cols-2 max-sm:grid-cols-1">
+        <div class="p-2 text-center">
+          <span class="mx-auto mb-3.5 grid h-[58px] w-[58px] place-items-center rounded-[16px] bg-accent-soft text-[1.4rem] text-accent"><i class="fa-solid fa-truck-fast"></i></span>
+          <h4 class="mb-1 text-[1.05rem]">Free Shipping</h4>
+          <p class="text-[0.9rem] text-secondary">On orders over $75</p>
+        </div>
+        <div class="p-2 text-center">
+          <span class="mx-auto mb-3.5 grid h-[58px] w-[58px] place-items-center rounded-[16px] bg-accent-soft text-[1.4rem] text-accent"><i class="fa-solid fa-rotate-left"></i></span>
+          <h4 class="mb-1 text-[1.05rem]">Easy Returns</h4>
+          <p class="text-[0.9rem] text-secondary">30-day money back</p>
+        </div>
+        <div class="p-2 text-center">
+          <span class="mx-auto mb-3.5 grid h-[58px] w-[58px] place-items-center rounded-[16px] bg-accent-soft text-[1.4rem] text-accent"><i class="fa-solid fa-shield-halved"></i></span>
+          <h4 class="mb-1 text-[1.05rem]">Secure Payment</h4>
+          <p class="text-[0.9rem] text-secondary">100% protected</p>
+        </div>
+        <div class="p-2 text-center">
+          <span class="mx-auto mb-3.5 grid h-[58px] w-[58px] place-items-center rounded-[16px] bg-accent-soft text-[1.4rem] text-accent"><i class="fa-solid fa-headset"></i></span>
+          <h4 class="mb-1 text-[1.05rem]">24/7 Support</h4>
+          <p class="text-[0.9rem] text-secondary">Always here to help</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="js/products.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
